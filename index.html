@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Password generator app</title>
+    <link rel="stylesheet" href="./assets/css/index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 class="heading-small title">Password Generator</h1>
+
+        <div class="password">
+          <div class="heading-large">P4$5W0rD!</div>
+          <img src="./assets/images/icon-copy.svg" alt="Copy" />
+        </div>
+
+        <div class="password-settings">
+          <div class="password-info">
+            <div>Character Length</div>
+
+            <div class="range-value heading-small">10</div>
+          </div>
+
+          <div class="range">
+            <input
+              type="range"
+              min="0"
+              max="20"
+              value="10"
+              class="slider w-full"
+              step="1"
+            />
+          </div>
+
+          <div class="options">
+            <div class="form-group">
+              <input type="checkbox" />
+              <div>Include Uppercase Letters</div>
+            </div>
+
+            <div class="form-group">
+              <input type="checkbox" />
+              <div>Include Lowecase Letters</div>
+            </div>
+
+            <div class="form-group">
+              <input type="checkbox" />
+              <div>Include Numbers</div>
+            </div>
+
+            <div class="form-group">
+              <input type="checkbox" />
+              <div>Include Symbols</div>
+            </div>
+          </div>
+
+          <div class="strength">
+            <div>Strength</div>
+
+            <div class="strength-right">
+              <div class="heading-small">Medium</div>
+
+              <div class="strength-bar">
+                <div class="strength-bar-fill strength-bar-fill-full"></div>
+                <div class="strength-bar-fill strength-bar-fill-full"></div>
+                <div class="strength-bar-fill strength-bar-fill-full"></div>
+                <div class="strength-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <button class="button w-full">
+            Generate
+            <img src="./assets/images/icon-arrow-right.svg" alt="Arrow" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    {{/* P4$5W0rD! Character Length Include Uppercase Letters Include Lowercase
+    Letters Include Numbers Include Symbols Strength Generate */}}
+    <script src="./assets/javascript/index.js"></script>
+  </body>
+</html>
