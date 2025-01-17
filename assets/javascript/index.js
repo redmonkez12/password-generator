@@ -16,11 +16,13 @@ const passwordDiv = document.querySelector(".password-value");
 const passwordStrength = document.querySelector(
   ".strength-right .heading-small"
 );
+const rangeValue = document.querySelector(".range-value");
 let passwordLength = 10;
 
 slider.addEventListener("input", (event) => {
   const value = event.target.value;
   passwordLength = value;
+  rangeValue.innerText = value;
   event.target.style.setProperty("--value", value);
 
   if (passwordLength < 1) {
