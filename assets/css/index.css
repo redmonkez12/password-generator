@@ -62,7 +62,7 @@ body {
 }
 
 .title {
-  color: var(--gray);
+  color: var(--white);
   text-align: center;
 }
 
@@ -84,11 +84,12 @@ body {
   display: grid;
   height: 100vh;
   place-items: center;
+  padding: 0 1rem;
 }
 
 .card {
   max-width: 540px;
-  width: 1000%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -102,10 +103,30 @@ body {
   padding: 1rem 1.5rem;
 }
 
+.password-value-empty {
+  color: var(--gray);
+}
+
+.password .copy-icon {
+  cursor: pointer;
+  fill: var(--green);
+}
+
+.password .copy-text {
+  text-transform: uppercase;
+  color: var(--green);
+  margin-left: auto;
+  margin-right: 1rem;
+}
+
+.password .copy-icon:hover {
+  fill: var(--white);
+}
+
 .password-settings {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   padding: 1.5rem;
   background-color: var(--gray-dark);
 }
@@ -129,6 +150,21 @@ body {
   border: 0;
 
   background-color: var(--green);
+  border: 1px solid var(--green);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: transparent;
+  color: var(--green);
+}
+
+button:disabled, 
+button[disabled] {
+  background-color: var(--green);
+  border: 1px solid var(--green);
+  color: var(--black);
+  opacity: 0.6
 }
 
 .button img {
@@ -212,9 +248,24 @@ input[type="range"]::before {
   height: 28px;
 }
 
-.strength-bar-fill-full {
+.strength-bar-fill-too-weak {
+  background-color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.strength-bar-fill-weak {
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+}
+
+.strength-bar-fill-medium {
   background-color: var(--yellow);
   border: 1px solid var(--yellow);
+}
+
+.strength-bar-fill-strong {
+  background-color: var(--green);
+  border: 1px solid var(--green);
 }
 
 .strength-right {
@@ -223,21 +274,16 @@ input[type="range"]::before {
   gap: 0.5rem;
 }
 
-.options {
-
-}
-
 .form-group {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
-       appearance: none;
-  background-color: var(--green);
+  appearance: none;
   margin: 0;
   font: inherit;
   color: currentColor;
@@ -250,24 +296,34 @@ input[type=checkbox] {
   place-content: center;
 }
 
-input[type=checkbox]::before {
+input[type="checkbox"]::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
-  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  -webkit-clip-path: polygon(
+    14% 44%,
+    0 65%,
+    50% 100%,
+    100% 16%,
+    80% 0%,
+    43% 62%
+  );
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   transform: scale(0);
   transform-origin: bottom left;
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--gray-dark);
   background-color: CanvasText;
 }
+input[type="checkbox"]:checked {
+  background-color: var(--green);
+}
 
-input[type=checkbox]:checked::before {
+input[type="checkbox"]:checked::before {
   transform: scale(1);
 }
 
-input[type=checkbox]:focus {
+input[type="checkbox"]:focus {
   outline: max(2px, 0.15em) solid currentColor;
   outline-offset: max(2px, 0.15em);
 }
